@@ -1,5 +1,3 @@
-import imgImage7 from "figma:asset/00cdb4fee21228242d0c2a44dcf82dbe1a12c070.png";
-
 function Container() {
   return (
     <div
@@ -9,7 +7,10 @@ function Container() {
       <div
         className="bg-center bg-cover bg-no-repeat h-[1091.5px] shrink-0 w-[1082px]"
         data-name="image 7"
-        style={{ backgroundImage: `url('${imgImage7}')` }}
+        style={{ 
+          backgroundImage: `url(/dexter_graphic.png)`,
+          filter: "brightness(0.4) contrast(1.1) hue-rotate(60deg)",
+        }}
       />
     </div>
   );

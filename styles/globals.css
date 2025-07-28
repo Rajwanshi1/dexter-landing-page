@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #0C0C0D;
+  --card: #ffffff;
+  --card-foreground: #0C0C0D;
+  --popover: #ffffff;
+  --popover-foreground: #0C0C0D;
+  --primary: #0C0C0D;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #0C0C0D;
+  --muted: #f5f5f5;
+  --muted-foreground: #8B8B8B;
+  --accent: #f5f5f5;
+  --accent-foreground: #0C0C0D;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #E0E0E0;
+  --input: #E0E0E0;
+  --ring: #bded63;
+  --radius: 8px;
+  
+  /* Dexter Flagship Theme 2.0 */
+  --dexter-ultra-dark: #0C0C0D;
+  --dexter-carbon: #1A1A1B;
+  --dexter-graphite: #2A2A2A;
+  --dexter-grey: #8B8B8B;
+  --dexter-light-grey: #E0E0E0;
+  --dexter-white: #FFFFFF;
+  --dexter-primary: #bded63;
+  --dexter-primary-soft: rgba(189, 237, 99, 0.1);
+  --dexter-primary-glow: rgba(189, 237, 99, 0.2);
+  
+  /* Typography weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+.dark {
+  --background: var(--dexter-ultra-dark);
+  --foreground: var(--dexter-white);
+  --card: var(--dexter-carbon);
+  --card-foreground: var(--dexter-white);
+  --popover: var(--dexter-carbon);
+  --popover-foreground: var(--dexter-white);
+  --primary: var(--dexter-primary);
+  --primary-foreground: #000000;
+  --secondary: var(--dexter-graphite);
+  --secondary-foreground: var(--dexter-white);
+  --muted: var(--dexter-graphite);
+  --muted-foreground: var(--dexter-grey);
+  --accent: var(--dexter-graphite);
+  --accent-foreground: var(--dexter-white);
+  --destructive: #dc2626;
+  --destructive-foreground: var(--dexter-white);
+  --border: var(--dexter-graphite);
+  --input: var(--dexter-graphite);
+  --ring: var(--dexter-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom Dexter colors */
+  --color-dexter-ultra-dark: var(--dexter-ultra-dark);
+  --color-dexter-carbon: var(--dexter-carbon);
+  --color-dexter-graphite: var(--dexter-graphite);
+  --color-dexter-grey: var(--dexter-grey);
+  --color-dexter-light-grey: var(--dexter-light-grey);
+  --color-dexter-white: var(--dexter-white);
+  --color-dexter-primary: var(--dexter-primary);
+  --color-dexter-primary-soft: var(--dexter-primary-soft);
+  --color-dexter-primary-glow: var(--dexter-primary-glow);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Flagship Typography System */
+@layer base {
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  
+  /* Typography scale - overrides default Tailwind typography */
+  .text-display {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-size: 4rem; /* 64px */
+    line-height: 1.1;
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .text-headline {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.2;
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .text-subhead {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.4;
+    font-weight: var(--font-weight-normal);
+  }
+  
+  .text-label {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.3;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+  
+  .text-button {
+    font-size: 1rem; /* 16px */
+    line-height: 1.2;
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .text-body {
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+    font-weight: var(--font-weight-normal);
+  }
+}
+
+/* Flagship Microinteractions */
+@layer utilities {
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(189, 237, 99, 0.15);
+  }
+  
+  /* Glow effects - refined */
+  .glow-soft {
+    box-shadow: 0 0 0 1px var(--dexter-primary-glow);
+  }
+  
+  .glow-medium {
+    box-shadow: 0 0 20px var(--dexter-primary-glow);
+  }
+  
+  /* Border glow on hover */
+  .border-glow {
+    transition: box-shadow 0.3s ease-out;
+  }
+  
+  .border-glow:hover {
+    box-shadow: 0 0 0 1px var(--dexter-primary), 0 0 10px var(--dexter-primary-glow);
+  }
+  
+  /* Pulse ring effect */
+  .pulse-ring {
+    position: relative;
+  }
+  
+  .pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid var(--dexter-primary);
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  
+  .pulse-ring:active::after {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Backdrop blur */
+  .backdrop-blur-dexter {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  /* Gradient backgrounds */
+  .bg-midnight-carbon {
+    background: linear-gradient(135deg, var(--dexter-ultra-dark) 0%, var(--dexter-carbon) 100%);
+  }
+  
+  .bg-carbon-graphite {
+    background: linear-gradient(135deg, var(--dexter-carbon) 0%, var(--dexter-graphite) 100%);
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--dexter-primary) 0%, #b8ff4f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Refined animations */
+@layer utilities {
+  @keyframes soft-bounce {
+    0%, 100% { 
+      transform: translateY(0);
+    }
+    50% { 
+      transform: translateY(-4px);
+    }
+  }
+  
+  .animate-soft-bounce {
+    animation: soft-bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+  
+  @keyframes counter-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-counter {
+    animation: counter-up 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes gentle-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes blink-dot {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+  
+  .animate-blink-dot {
+    animation: blink-dot 1.2s ease-in-out infinite;
+  }
+  
+  .box-decoration-clone {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+/* Responsive grid system */
+@layer utilities {
+  .container-dexter {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .container-dexter {
+      padding: 0 2rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-dexter {
+      padding: 0 3rem;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}

@@ -1,18 +1,23 @@
 import { Button } from "./ui/button";
-import { ArrowRight, Users } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { XIcon } from "./XIcon";
 
 export function HeroSection() {
+  const handleJoinX = () => {
+    window.open("https://x.com/dexterOnSui", "_blank");
+  };
+
   const handleJoinDiscord = () => {
-    window.open("https://discord.gg/VhU5WEMRgZ", "_blank");
+    window.open("https://discord.gg/UtFT9qV2", "_blank");
   };
 
   // Image positioning and scaling configuration
   const imageConfig = {
     desktop: {
-      translateX: 20, // percentage
+      translateX: 12, // percentage
       translateY: 15, // percentage
-      scale: 1.1, // scaling factor
-      opacity: 0.65
+      scale: 1.12, // scaling factor
+      opacity: 0.9
     },
     mobile: {
       translateX: 0, // center horizontally
@@ -25,7 +30,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] pt-16 lg:pt-20 overflow-hidden"
+      className="relative min-h-[80vh] pt-16 lg:pt-20 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
@@ -42,6 +47,8 @@ export function HeroSection() {
             backgroundRepeat: "no-repeat",
             opacity: imageConfig.mobile.opacity,
             transform: `translateX(${imageConfig.mobile.translateX}%) translateY(${imageConfig.mobile.translateY}%) scale(${imageConfig.mobile.scale})`,
+            maskImage: "radial-gradient(circle at center, white 20%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(circle at center, white 20%, transparent 70%)",
           }}
         />
         {/* Desktop Image */}
@@ -54,6 +61,8 @@ export function HeroSection() {
             backgroundRepeat: "no-repeat",
             opacity: imageConfig.desktop.opacity,
             transform: `translateX(${imageConfig.desktop.translateX}%) translateY(${imageConfig.desktop.translateY}%) scale(${imageConfig.desktop.scale})`,
+            maskImage: "radial-gradient(ellipse at center, white 20%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, white 20%, transparent 70%)",
           }}
         />
       </div>
@@ -62,7 +71,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent" />
 
       <div className="container-dexter relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] py-12 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(80vh-4rem)] lg:min-h-[calc(80vh-5rem)] py-12 lg:py-20">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-8 animate-fade-in-up">
             <div className="space-y-6 lg:space-y-6">
@@ -92,10 +101,14 @@ export function HeroSection() {
                 }}
               >
                 <p>
-                  Autonomous yield routing that finds the best
-                  opportunities and executes.
+                  Yield optimized 24/7 
                   <br />
-                  Risk-aware and non-custodial.
+                  1-click, non-custodial execution
+                  <br />
+                  Policy-driven, capital-efficient
+                  <br />
+                  <br />
+                  <br />
                 </p>
               </div>
             </div>
@@ -103,29 +116,12 @@ export function HeroSection() {
             {/* CTAs - Mobile optimized */}
             <div className="flex flex-col sm:flex-row gap-4 px-4 lg:px-0">
               <Button
-                onClick={handleJoinDiscord}
-                className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-dexter-primary hover:bg-dexter-primary/90 border-0 hover-lift pulse-ring min-h-[52px] lg:min-h-[48px] rounded-lg text-button cursor-pointer font-medium"
-                style={{ color: "#000000" }}
-              >
-                <Users className="w-4 h-4 mr-2" />
-                Join Discord
-              </Button>
-              <Button
                 variant="outline"
                 className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-transparent border-[1.5px] border-dexter-primary text-white hover:bg-transparent dark:hover:bg-transparent hover-lift min-h-[52px] lg:min-h-[48px] rounded-lg text-button cursor-pointer transition-all duration-200 hover:shadow-[0_0_0_1px_#bded63,0_0_10px_rgba(189,237,99,0.2)] dark:bg-transparent dark:border-dexter-primary dark:text-white font-medium"
-                style={{
-                  backgroundColor: "transparent !important",
-                  borderColor: "#bded63 !important",
-                  color: "#ffffff !important",
-                }}
                 asChild
               >
                 <a
                   href="#how-it-works"
-                  style={{
-                    backgroundColor: "transparent !important",
-                    color: "#ffffff !important",
-                  }}
                 >
                   How it Works
                 </a>
@@ -142,7 +138,7 @@ export function HeroSection() {
                     </span>
                   </div>
                   <p className="text-base lg:text-sm text-white lg:text-dexter-grey leading-relaxed">
-                    Highest yield, every time
+                    Highest yield, guaranteed
                   </p>
                 </div>
                 <div className="space-y-2 flex flex-col text-center lg:text-left">
@@ -162,7 +158,7 @@ export function HeroSection() {
                     </span>
                   </div>
                   <p className="text-base lg:text-sm text-white lg:text-dexter-grey leading-relaxed">
-                    Agent executes on your wallet
+                    Agent executes on smart accounts
                   </p>
                 </div>
               </div>

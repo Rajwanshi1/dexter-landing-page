@@ -1,14 +1,14 @@
-import { Twitter, MessageCircle } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import Vector from "../imports/Vector";
+import { Button } from "./ui/button";
 
 export function Footer() {
-  const handleTwitter = () => {
-    window.open("https://twitter.com/dexterOnSui", "_blank");
+  const handleJoinX = () => {
+    window.open("https://x.com/dexterOnSui", "_blank");
   };
 
-  const handleDiscord = () => {
-    window.open("https://discord.gg/VhU5WEMRgZ", "_blank");
+  const handleJoinDiscord = () => {
+    window.open("https://discord.gg/UtFT9qV2", "_blank");
   };
 
   return (
@@ -35,11 +35,11 @@ export function Footer() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button
-                        onClick={handleTwitter}
+                        onClick={handleJoinX}
                         className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition"
                       >
-                        <Twitter className="w-4 h-4" />
-                        <span className="text-sm">Twitter/X</span>
+                        <img src="/x.png" alt="X" className="w-[14px] h-[14px]" />
+                        <span className="text-sm">Follow us on X</span>
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -47,20 +47,19 @@ export function Footer() {
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
-                
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button
-                        onClick={handleDiscord}
+                        onClick={handleJoinDiscord}
                         className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition"
                       >
-                        <MessageCircle className="w-4 h-4" />
-                        <span className="text-sm">Discord</span>
+                        <img src="/discord_icon_transparent.png" alt="Discord" className="w-4 h-4" />
+                        <span className="text-sm">Join Discord</span>
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="text-sm">Join our Discord community</p>
+                      <p className="text-sm">Join our Discord</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

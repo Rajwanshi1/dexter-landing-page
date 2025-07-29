@@ -25,7 +25,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-16 lg:pt-20 overflow-hidden"
+      className="relative min-h-[90vh] pt-16 lg:pt-20 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
@@ -85,9 +85,9 @@ export function HeroSection() {
 
               {/* Subhead - Mobile optimized */}
               <div
-                className="sm:text-base lg:text-lg text-white lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-4 lg:px-0"
+                className="lg:text-xl text-white lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-4 lg:px-0"
                 style={{
-                  fontSize: "18px", // 1px increase from text-sm (14px) for mobile
+                  fontSize: "20px",
                   textShadow: "0 2px 6px rgba(0,0,0,0.8)",
                 }}
               >

@@ -10,7 +10,7 @@ export function FinalCTASection() {
   return (
     <section
       id="get-started"
-      className="py-20 lg:py-32 border-t border-border"
+      className="min-h-[90vh] border-t border-border flex items-center"
     >
       <div className="container-dexter">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -28,7 +28,7 @@ export function FinalCTASection() {
               <span className="text-gradient">manually</span>?
             </h2>
 
-            <p className="text-subhead text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Let Dexter handle the complexity while you focus
               on what matters.
               <span className="text-foreground">

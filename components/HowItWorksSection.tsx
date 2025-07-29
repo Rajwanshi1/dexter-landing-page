@@ -23,7 +23,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 lg:py-24" style={{ backgroundColor: '#bded63' }}>
+    <section id="how-it-works" className="min-h-[90vh] flex items-center" style={{ backgroundColor: '#bded63' }}>
       <div className="container-dexter">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -69,16 +69,14 @@ export function HowItWorksSection() {
                       <ScoreIcon size={48} />
                     ) : step.icon === "execute" ? (
                       <ExecuteIcon size={48} />
-                    ) : (
-                      <step.icon style={{ width: '48px', height: '48px', color: '#111111', strokeWidth: 1.5 }} />
-                    )}
+                    ) : null}
                   </div>
                   
                   {/* Title - Perfectly aligned to icon baseline */}
                   <h3 
                     className="font-semibold flex items-center" 
                     style={{ 
-                      fontSize: '24px', 
+                      fontSize: '26px', 
                       lineHeight: '1.3',
                       color: '#000000',
                       fontWeight: '600',
@@ -94,7 +92,7 @@ export function HowItWorksSection() {
                 {/* Description - Centered with optimal spacing */}
                 <div className="text-center px-2">
                   <p style={{ 
-                    fontSize: '16px', 
+                    fontSize: '18px', 
                     lineHeight: '1.6',
                     color: '#2D2D2D',
                     fontWeight: '400',
@@ -130,15 +128,13 @@ export function HowItWorksSection() {
                         <ScoreIcon size={36} />
                       ) : step.icon === "execute" ? (
                         <ExecuteIcon size={36} />
-                      ) : (
-                        <step.icon style={{ width: '36px', height: '36px', color: '#111111', strokeWidth: 1.5 }} />
-                      )}
+                      ) : null}
                     </div>
                     
                     <h3 
                       className="font-semibold" 
                       style={{ 
-                        fontSize: '20px', 
+                        fontSize: '22px', 
                         lineHeight: '1.3',
                         color: '#000000',
                         fontWeight: '600',
@@ -166,15 +162,13 @@ export function HowItWorksSection() {
                         <ScoreIcon size={40} />
                       ) : step.icon === "execute" ? (
                         <ExecuteIcon size={40} />
-                      ) : (
-                        <step.icon style={{ width: '40px', height: '40px', color: '#111111', strokeWidth: 1.5 }} />
-                      )}
+                      ) : null}
                     </div>
                     
                     <h3 
                       className="font-semibold flex items-center" 
                       style={{ 
-                        fontSize: '22px', 
+                        fontSize: '24px', 
                         lineHeight: '1.3',
                         color: '#000000',
                         fontWeight: '600',
@@ -190,7 +184,7 @@ export function HowItWorksSection() {
                 {/* Description - Center-aligned with reduced spacing */}
                 <div className="text-center max-w-sm mx-auto">
                   <p style={{ 
-                    fontSize: '15px', 
+                    fontSize: '17px', 
                     lineHeight: '1.5',
                     color: '#2D2D2D',
                     fontWeight: '400',

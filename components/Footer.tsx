@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="container-dexter">
-        <div className="py-12 lg:py-16">
+        <div className="py-6 lg:py-6">
           {/* Simple Footer Layout */}
           <div className="flex flex-col items-center space-y-8 lg:flex-row lg:justify-between lg:items-center lg:space-y-0">
             

@@ -2,10 +2,10 @@ import { BarChart3 } from "lucide-react";
 
 export function MetricsSection() {
   return (
-    <section id="metrics" className="py-16 lg:py-24 border-t border-border">
+    <section id="metrics" className="min-h-[90vh] border-t border-border flex items-center">
       <div className="container-dexter">
         {/* Section Layout */}
-        <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
+        <div className="relative">
           {/* Centered Pill Tag - Matching HeroSection styling */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4 sm:px-0">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full">
@@ -28,7 +28,7 @@ export function MetricsSection() {
               
               {/* Supportive Microcopy */}
               <div className="space-y-2 max-w-[90%] sm:max-w-lg mx-auto lg:mx-0 px-4 sm:px-0">
-                <p className="text-sm sm:text-base lg:text-lg text-dexter-grey leading-relaxed">
+                <p className="text-xl text-dexter-grey leading-relaxed">
                   Simulated yield performance across integrated protocols, based on historical WAL yield data.
                 </p>
               </div>

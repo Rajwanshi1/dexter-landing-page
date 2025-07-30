@@ -1,12 +1,6 @@
-import { Button } from "./ui/button";
-import { Sparkles, Wallet } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 
 export function FinalCTASection() {
-  // Disabled launch handler - no functionality until launch
-  const handleLaunchDexter = () => {
-    // Placeholder - no action until launch
-  };
-
   return (
     <section
       id="get-started"
@@ -41,19 +35,13 @@ export function FinalCTASection() {
             </p>
           </div>
 
-          {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={handleLaunchDexter}
-              className="hidden bg-dexter-primary text-black hover:bg-dexter-primary/90 border-0 hover-lift pulse-ring cursor-not-allowed"
-            >
-              <Wallet className="w-4 h-4 mr-2" />
-              Launch Dexter
-            </Button>
-            <p className="inline-block text-2xl font-bold font-mono uppercase tracking-wide bg-dexter-carbon border border-dexter-primary rounded-full px-6 py-3 animate-gentle-pulse">
-              <span style={{ color: "white" }}>Launching this </span>
-              <span style={{ color: "#BDED63" }}>August</span>
-            </p>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble">
+              <Calendar className="w-4 h-4 text-dexter-primary" />
+              <span className="text-sm sm:text-lg text-dexter-primary font-mono font-medium uppercase tracking-wide">
+                Launching this August
+              </span>
+            </div>
           </div>
         </div>
       </div>

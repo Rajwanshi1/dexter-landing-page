@@ -17,7 +17,7 @@ export function ProtocolTrustSection() {
   ];
 
   return (
-    <section id="protocols" className="py-16 lg:py-24 bg-background border-t border-border">
+    <section id="protocols" className="bg-background border-t border-border section-padding">
       <div className="container-dexter">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">

@@ -23,7 +23,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="min-h-[90vh] flex items-center" style={{ backgroundColor: '#bded63' }}>
+    <section id="how-it-works" className="section-padding" style={{ backgroundColor: '#bded63' }}>
       <div className="container-dexter">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">

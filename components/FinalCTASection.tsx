@@ -10,7 +10,7 @@ export function FinalCTASection() {
   return (
     <section
       id="get-started"
-      className="min-h-[90vh] border-t border-border flex items-center"
+      className="border-t border-border section-padding"
     >
       <div className="container-dexter">
         <div className="max-w-4xl mx-auto text-center space-y-8">

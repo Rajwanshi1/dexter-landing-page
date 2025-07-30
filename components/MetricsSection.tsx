@@ -2,7 +2,7 @@ import { BarChart3 } from "lucide-react";
 
 export function MetricsSection() {
   return (
-    <section id="metrics" className="min-h-[90vh] border-t border-border flex items-center">
+    <section id="metrics" className="border-t border-border section-padding">
       <div className="container-dexter">
         {/* Section Layout */}
         <div className="relative">
@@ -10,7 +10,7 @@ export function MetricsSection() {
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4 sm:px-0">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full">
               <BarChart3 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-dexter-primary" />
-              <span className="text-[10px] sm:text-[16px] text-dexter-primary font-mono font-medium uppercase tracking-wide">SIMULATION SNAPSHOT</span>
+              <span className="text-[10px] sm:text-[16px] text-dexter-primary font-mono font-medium uppercase tracking-wide">STRATEGY PERFORMANCE</span>
             </div>
           </div>
           
@@ -50,39 +50,45 @@ export function MetricsSection() {
 function ProtocolTable() {
   const protocols = [
     {
+      name: "Dexter",
+      apr: "49.7%",
+      earnings: "+$497.00",
+      logoColor: "#bded63"
+    },
+    {
       name: "Scallop",
-      apr: "44.5%",
-      earnings: "+$1,210.00",
+      apr: "41.73%",
+      earnings: "+$417.30",
       logoColor: "#06B6D4"
     },
     {
       name: "Suilend",
-      apr: "40.4%",
-      earnings: "+$1,050.00",
+      apr: "39.45%",
+      earnings: "+$394.50",
       logoColor: "#4F46E5"
     },
     {
       name: "Navi",
-      apr: "40.11%",
-      earnings: "+$960.00",
+      apr: "37.23%",
+      earnings: "+$372.30",
       logoColor: "#8B5CF6"
     },
     {
       name: "Alphalend",
       apr: "11.66%",
-      earnings: "+$650.00",
+      earnings: "+$116.60",
       logoColor: "#10B981"
     },
     {
       name: "Aftermath",
       apr: "8.7%",
-      earnings: "+$530.00",
+      earnings: "+$87.00",
       logoColor: "#F59E0B"
     },
     {
       name: "Cetus",
       apr: "6.9%",
-      earnings: "+$420.00",
+      earnings: "+$69.00",
       logoColor: "#EF4444"
     }
   ];
@@ -92,8 +98,8 @@ function ProtocolTable() {
       {/* Table Header */}
       <div className="grid grid-cols-3 gap-2 sm:gap-4 px-2 sm:px-4 py-2 sm:py-3 mb-1 sm:mb-2">
         <span className="text-[10px] sm:text-label text-muted-foreground font-mono font-medium uppercase tracking-wide">PROTOCOL</span>
-        <span className="text-[10px] sm:text-label text-muted-foreground text-center font-mono font-medium uppercase tracking-wide">APR</span>
-        <span className="text-[10px] sm:text-label text-muted-foreground text-right font-mono font-medium uppercase tracking-wide">30D YIELD</span>
+        <span className="text-[10px] sm:text-label text-muted-foreground text-center font-mono font-medium uppercase tracking-wide">AVG APR</span>
+        <span className="text-[10px] sm:text-label text-muted-foreground text-right font-mono font-medium uppercase tracking-wide">1y YIELD</span>
       </div>
       
       {/* Protocol Rows */}
@@ -102,8 +108,10 @@ function ProtocolTable() {
           const opacity = index === 0 ? 1 : Math.max(0.2, 1 - (index * 0.15));
           const isLastRow = index === protocols.length - 1;
           
+          const isDexter = protocol.name === "Dexter";
+          
           return (
-            <div key={protocol.name}>
+            <div key={protocol.name} className={isDexter ? "bg-dexter-primary-soft rounded-md animate-gentle-pulse" : ""}>
               <div
                 className="relative px-2 sm:px-4 py-2 sm:py-3 transition-all duration-500 smooth-transition animate-fade-in-up bg-transparent hover:bg-muted/5"
                 style={{ 
@@ -125,7 +133,7 @@ function ProtocolTable() {
                     </span>
                   </div>
                   
-                  {/* APR */}
+                  {/* AVG APR */}
                   <div className="text-center">
                     <span className="text-[11px] sm:text-label font-normal leading-tight" style={{ textTransform: 'none', color: '#bded63' }}>
                       {protocol.apr}

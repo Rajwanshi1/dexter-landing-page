@@ -137,6 +137,9 @@
 
 /* Flagship Microinteractions */
 @layer utilities {
+  .filter-black {
+    filter: brightness(0) invert(0);
+  }
   /* Hover effects */
   .hover-lift {
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
@@ -265,12 +268,12 @@
       opacity: 1;
     }
     50% {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
   
   .animate-gentle-pulse {
-    animation: gentle-pulse 3s ease-in-out infinite;
+    animation: gentle-pulse 2s ease-in-out infinite;
   }
   
   @keyframes blink-dot {

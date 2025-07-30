@@ -1,11 +1,6 @@
 import { Button } from "./ui/button";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import { XIcon } from "./XIcon";
 
 export function HeroSection() {
-  const handleJoinX = () => {
-    window.open("https://x.com/dexterOnSui", "_blank");
-  };
 
   const handleJoinDiscord = () => {
     window.open("https://discord.gg/UtFT9qV2", "_blank");
@@ -30,7 +25,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[80vh] pt-16 lg:pt-20 overflow-hidden"
+      className="relative overflow-hidden section-padding"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
@@ -101,11 +96,9 @@ export function HeroSection() {
                 }}
               >
                 <p>
-                  Yield optimized 24/7 
+                  A personalized DeFi agent for the highest
                   <br />
-                  1-click, non-custodial execution
-                  <br />
-                  Policy-driven, capital-efficient
+                  risk-adjusted yield.
                   <br />
                   <br />
                   <br />
@@ -116,15 +109,17 @@ export function HeroSection() {
             {/* CTAs - Mobile optimized */}
             <div className="flex flex-col sm:flex-row gap-4 px-4 lg:px-0">
               <Button
-                variant="outline"
-                className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-transparent border-[1.5px] border-dexter-primary text-white hover:bg-transparent dark:hover:bg-transparent hover-lift min-h-[52px] lg:min-h-[48px] rounded-lg text-button cursor-pointer transition-all duration-200 hover:shadow-[0_0_0_1px_#bded63,0_0_10px_rgba(189,237,99,0.2)] dark:bg-transparent dark:border-dexter-primary dark:text-white font-medium"
-                asChild
+                variant="default"
+                className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-dexter-primary text-black hover:bg-dexter-primary/90 hover-lift min-h-[52px] lg:min-h-[48px] rounded-lg text-button font-medium transition-all duration-200"
+                onClick={handleJoinDiscord}
               >
-                <a
-                  href="#how-it-works"
-                >
-                  How it Works
-                </a>
+                <img
+                  src="/discord_icon_transparent.png"
+                  alt="Discord"
+                  className="w-5 h-5 filter-black"
+                  style={{ marginRight: "6px" }}
+                />
+                <span className="text-black">Join Discord</span>
               </Button>
             </div>
 

@@ -29,7 +29,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden pt-20 lg:pt-0"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />

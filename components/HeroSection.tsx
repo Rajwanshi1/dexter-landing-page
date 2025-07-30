@@ -28,8 +28,8 @@ export function HeroSection() {
 
   return (
     <section
-      id="hero"
-      className="relative overflow-hidden pt-20 lg:pt-0"
+            id="hero"
+      className="relative overflow-hidden pt-16 lg:pt-0"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
@@ -72,7 +72,7 @@ export function HeroSection() {
       {/* Gradient overlay - adjusted for mobile */}
       <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent pointer-events-none" />
 
-      <div className="container-dexter relative z-10 flex items-center min-h-screen">
+            <div className="container-dexter relative z-10 flex items-center" style={{ minHeight: "calc(100vh - 25px)" }}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8 animate-fade-in-up">

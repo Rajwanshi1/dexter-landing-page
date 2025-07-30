@@ -1,6 +1,8 @@
 import { Button } from "./ui/button";
+import { useState } from "react";
 
 export function HeroSection() {
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleJoinDiscord = () => {
     window.open("https://discord.gg/UtFT9qV2", "_blank");
@@ -22,19 +24,21 @@ export function HeroSection() {
     }
   };
 
+  const desktopScale = isHovered ? imageConfig.desktop.scale * 1.03 : imageConfig.desktop.scale;
+
   return (
     <section
       id="hero"
-      className="relative overflow-hidden section-padding"
+      className="relative overflow-hidden h-screen"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
 
       {/* Dexter Pixel Background - Responsive positioning */}
-      <div className="absolute inset-0 flex items-center justify-center lg:justify-end pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center lg:justify-end">
         {/* Mobile Image */}
         <div 
-          className="block lg:hidden w-full h-full bg-center bg-no-repeat"
+          className="block lg:hidden w-full h-full bg-center bg-no-repeat pointer-events-none"
           style={{
             backgroundImage: `url(/Dexter_pixel.png)`,
             backgroundPosition: "center center",
@@ -48,25 +52,28 @@ export function HeroSection() {
         />
         {/* Desktop Image */}
         <div 
-          className="hidden lg:block w-full h-full max-w-5xl bg-center bg-cover bg-no-repeat"
+          className="hidden lg:block w-full h-full max-w-5xl bg-center bg-cover bg-no-repeat pointer-events-auto"
           style={{
             backgroundImage: `url(/Dexter_pixel.png)`,
             backgroundPosition: "center right",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             opacity: imageConfig.desktop.opacity,
-            transform: `translateX(${imageConfig.desktop.translateX}%) translateY(${imageConfig.desktop.translateY}%) scale(${imageConfig.desktop.scale})`,
+            transform: `translateX(${imageConfig.desktop.translateX}%) translateY(${imageConfig.desktop.translateY}%) scale(${desktopScale})`,
             maskImage: "radial-gradient(ellipse at center, white 20%, transparent 70%)",
             WebkitMaskImage: "radial-gradient(ellipse at center, white 20%, transparent 70%)",
+            transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         />
       </div>
 
       {/* Gradient overlay - adjusted for mobile */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent pointer-events-none" />
 
-      <div className="container-dexter relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(80vh-4rem)] lg:min-h-[calc(80vh-5rem)] py-12 lg:py-20">
+      <div className="container-dexter relative z-10 flex items-center h-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-8 animate-fade-in-up">
             <div className="space-y-6 lg:space-y-6">
@@ -99,7 +106,6 @@ export function HeroSection() {
                   A personalized DeFi agent for the highest
                   <br />
                   risk-adjusted yield.
-                  <br />
                   <br />
                   <br />
                 </p>
@@ -164,13 +170,6 @@ export function HeroSection() {
           <div className="relative flex items-center justify-center lg:justify-end">
             {/* Optional accent elements can go here */}
             <div className="w-full max-w-lg h-0 sm:h-[400px] lg:h-[600px] relative"></div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="flex justify-center pb-8">
-          <div className="w-6 h-10 border border-border rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-dexter-primary rounded-full animate-gentle-pulse mt-2" />
           </div>
         </div>
       </div>

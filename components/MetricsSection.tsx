@@ -8,7 +8,7 @@ export function MetricsSection() {
         <div className="relative">
           {/* Centered Pill Tag - Matching HeroSection styling */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4 sm:px-0">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble">
               <BarChart3 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-dexter-primary" />
               <span className="text-[10px] sm:text-[16px] text-dexter-primary font-mono font-medium uppercase tracking-wide">STRATEGY PERFORMANCE</span>
             </div>
@@ -29,7 +29,7 @@ export function MetricsSection() {
               {/* Supportive Microcopy */}
               <div className="space-y-2 max-w-[90%] sm:max-w-lg mx-auto lg:mx-0 px-4 sm:px-0">
                 <p className="text-xl text-dexter-grey leading-relaxed">
-                  Simulated yield performance across integrated protocols, based on historical WAL yield data.
+                Yield strategy performance on $1K, benchmarked with historical WAL yield data.
                 </p>
               </div>
             </div>

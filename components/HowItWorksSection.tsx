@@ -1,4 +1,4 @@
-import { BarChart3, Zap, ArrowRight } from "lucide-react";
+import { Zap } from "lucide-react";
 import { ScanIcon } from "./ScanIcon";
 import { ScoreIcon } from "./ScoreIcon";
 import { ExecuteIcon } from "./ExecuteIcon";
@@ -27,7 +27,7 @@ export function HowItWorksSection() {
       <div className="container-dexter">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-black/15 border border-black/20 rounded-full mb-6 lg:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-black/15 border border-black/20 rounded-full mb-6 lg:mb-8 page-bubble">
             <Zap className="w-3 h-3 text-black" />
             <span className="text-[10px] sm:text-[16px] text-black font-mono font-medium uppercase tracking-wide">How It Works</span>
           </div>
@@ -107,7 +107,7 @@ export function HowItWorksSection() {
 
           {/* Mobile & Tablet: Optimized responsive layout */}
           <div className="lg:hidden px-4 sm:px-6 space-y-6 sm:space-y-8">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div key={step.title} className="w-full">
                 {/* Mobile Icon + Title Layout */}
                 <div className="flex flex-col items-center text-center mb-3 sm:mb-4">

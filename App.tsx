@@ -4,6 +4,7 @@ import { MetricsSection } from "./components/MetricsSection";
 import { HowItWorksSection } from "./components/HowItWorksSection";
 import { FinalCTASection } from "./components/FinalCTASection";
 import { Footer } from "./components/Footer";
+import "./styles/effects.css";
 
 export default function App() {
   return (

@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { ArrowRight, Sparkles, Wallet } from "lucide-react";
+import { Sparkles, Wallet } from "lucide-react";
 
 export function FinalCTASection() {
   // Disabled launch handler - no functionality until launch
@@ -16,7 +16,7 @@ export function FinalCTASection() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Header */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble">
               <Sparkles className="w-3 h-3 text-dexter-primary" />
               <span className="text-[10px] sm:text-[16px] text-dexter-primary font-mono font-medium uppercase tracking-wide">
                 Ready to Start

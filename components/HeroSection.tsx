@@ -20,7 +20,7 @@ export function HeroSection() {
       translateX: 0, // center horizontally
       translateY: 18, // center vertically
       scale: 1.0, // maintain original size
-      opacity: 0.15 // slightly more transparent for better text readability
+      opacity: 0.3 // slightly more transparent for better text readability
     }
   };
 
@@ -75,7 +75,7 @@ export function HeroSection() {
       <div className="container-dexter relative z-10 flex items-center min-h-screen">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           {/* Left Content */}
-          <div className="space-y-8 lg:space-y-8 animate-fade-in-up">
+          <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
             <div className="space-y-6 lg:space-y-6">
               {/* Headline - Mobile optimized */}
               <h1
@@ -106,9 +106,6 @@ export function HeroSection() {
                   A personalized DeFi agent for the highest
                   <br />
                   risk-adjusted yield.
-                  <br />
-                  <br />
-                  <br />
                 </p>
               </div>
             </div>
@@ -131,8 +128,8 @@ export function HeroSection() {
             </div>
 
             {/* Key Features - Mobile optimized */}
-            <div className="pt-8 border-t border-border mx-4 lg:mx-0">
-              <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
+            <div className="pt-6 lg:pt-8 border-t border-border mx-4 lg:mx-0">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
                 <div className="space-y-2 flex flex-col text-center lg:text-left">
                   <div className="text-sm font-bold tracking-wide">
                     <span style={{ color: "#BDED63" }}>

@@ -50,24 +50,10 @@ export function FinalCTASection() {
               <Wallet className="w-4 h-4 mr-2" />
               Launch Dexter
             </Button>
-            <Button
-              variant="outline"
-              className="bg-transparent border-[1.5px] border-dexter-primary text-white hover:bg-transparent dark:hover:bg-transparent hover-lift rounded-lg text-button cursor-pointer transition-all duration-200 hover:shadow-[0_0_0_1px_#bded63,0_0_10px_rgba(189,237,99,0.2)] dark:bg-transparent dark:border-dexter-primary dark:text-white"
-              style={{
-                backgroundColor: "transparent !important",
-                borderColor: "#bded63 !important",
-                color: "#ffffff !important",
-              }}
-              asChild
-            >
-              <a
-                href="https://docs.dexterai.xyz/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Documentation
-              </a>
-            </Button>
+            <p className="inline-block text-3xl font-bold font-mono uppercase tracking-wide bg-dexter-carbon border border-dexter-primary rounded-full px-6 py-3">
+              <span style={{ color: "white" }}>Launching this </span>
+              <span style={{ color: "#BDED63" }}>August</span>
+            </p>
           </div>
         </div>
       </div>

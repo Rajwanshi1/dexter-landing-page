@@ -72,7 +72,7 @@ export function HeroSection() {
       {/* Gradient overlay - adjusted for mobile */}
       <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent pointer-events-none" />
 
-      <div className="container-dexter relative z-10 flex items-center min-h-screen pt-24 lg:pt-20">
+      <div className="container-dexter relative z-10 flex items-center min-h-screen">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-8 animate-fade-in-up">
@@ -108,6 +108,7 @@ export function HeroSection() {
                   risk-adjusted yield.
                   <br />
                   <br />
+                  <br />
                 </p>
               </div>
             </div>
@@ -131,7 +132,7 @@ export function HeroSection() {
 
             {/* Key Features - Mobile optimized */}
             <div className="pt-8 border-t border-border mx-4 lg:mx-0">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
+              <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
                 <div className="space-y-2 flex flex-col text-center lg:text-left">
                   <div className="text-sm font-bold tracking-wide">
                     <span style={{ color: "#BDED63" }}>

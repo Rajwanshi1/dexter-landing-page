@@ -50,7 +50,7 @@ export function FinalCTASection() {
               <Wallet className="w-4 h-4 mr-2" />
               Launch Dexter
             </Button>
-            <p className="inline-block text-3xl font-bold font-mono uppercase tracking-wide bg-dexter-carbon border border-dexter-primary rounded-full px-6 py-3">
+            <p className="inline-block text-2xl font-bold font-mono uppercase tracking-wide bg-dexter-carbon border border-dexter-primary rounded-full px-6 py-3 animate-gentle-pulse">
               <span style={{ color: "white" }}>Launching this </span>
               <span style={{ color: "#BDED63" }}>August</span>
             </p>

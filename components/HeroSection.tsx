@@ -79,7 +79,7 @@ export function HeroSection() {
             <div className="space-y-6 lg:space-y-6">
               {/* Headline - Mobile optimized */}
               <h1
-                className="text-[3rem] leading-[1.1] lg:text-display font-display text-foreground text-center lg:text-left px-4 lg:px-0"
+                className="text-[2.75rem] leading-[1.1] lg:text-display font-display text-foreground text-center lg:text-left px-4 lg:px-0"
                 style={{
                   textShadow: "0 2px 8px rgba(0,0,0,0.8)",
                 }}
@@ -96,9 +96,8 @@ export function HeroSection() {
 
               {/* Subhead - Mobile optimized */}
               <div
-                className="lg:text-xl text-white lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-4 lg:px-0"
+                className="text-lg lg:text-xl text-white lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-4 lg:px-0"
                 style={{
-                  fontSize: "20px",
                   textShadow: "0 2px 6px rgba(0,0,0,0.8)",
                 }}
               >

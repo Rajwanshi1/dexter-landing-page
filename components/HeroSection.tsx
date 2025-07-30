@@ -127,7 +127,7 @@ export function HeroSection() {
             </div>
 
             {/* Key Features - Mobile optimized */}
-            <div className="pt-6 lg:pt-8 border-t border-border mx-4 lg:mx-0">
+            <div className="pt-4 lg:pt-6 border-t border-border mx-4 lg:mx-0">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
                 <div className="space-y-2 flex flex-col text-center lg:text-left">
                   <div className="text-sm font-bold tracking-wide">

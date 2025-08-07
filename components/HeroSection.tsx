@@ -5,7 +5,7 @@ export function HeroSection() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleJoinDiscord = () => {
-    window.open("https://discord.gg/UtFT9qV2", "_blank");
+    window.open("https://discord.gg/uKNSKVUaee", "_blank");
   };
 
   // Image positioning and scaling configuration

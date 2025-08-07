@@ -30,7 +30,7 @@ export function Header() {
   };
 
   const handleJoinDiscord = () => {
-    window.open("https://discord.gg/UtFT9qV2", "_blank");
+    window.open("https://discord.gg/uKNSKVUaee", "_blank");
   };
 
   return (

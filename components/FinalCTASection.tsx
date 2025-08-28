@@ -39,7 +39,7 @@ export function FinalCTASection() {
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble">
               <Calendar className="w-4 h-4 text-dexter-primary" />
               <span className="text-sm sm:text-lg text-dexter-primary font-mono font-medium uppercase tracking-wide">
-                Launching this August
+                Launching Soon
               </span>
             </div>
           </div>

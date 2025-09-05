@@ -189,7 +189,7 @@ For production deployment, you may need to set environment variables:
 
 ```env
 VITE_APP_TITLE=Dexter
-VITE_TWITTER_URL=https://x.com/dexterOnSui
+VITE_TWITTER_URL=https://x.com/DexterAgents
 VITE_DISCORD_URL=https://discord.gg/uKNSKVUaee
 VITE_DOCS_URL=https://docs.dexterai.xyz/
 ```

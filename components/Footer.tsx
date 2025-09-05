@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export function Footer() {
   const handleJoinX = () => {
-    window.open("https://x.com/dexterOnSui", "_blank");
+    window.open("https://x.com/DexterAgents", "_blank");
   };
 
   const handleJoinDiscord = () => {
@@ -43,7 +43,7 @@ export function Footer() {
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p className="text-sm">Follow @dexterOnSui</p>
+                      <p className="text-sm">Follow @DexterAgents</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

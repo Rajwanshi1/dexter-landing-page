@@ -26,7 +26,7 @@ export function Header() {
   const logoTextColorClass = "text-foreground";
 
   const handleJoinX = () => {
-    window.open("https://x.com/dexterOnSui", "_blank");
+    window.open("https://x.com/DexterAgents", "_blank");
   };
 
   const handleJoinDiscord = () => {

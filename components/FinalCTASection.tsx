@@ -1,6 +1,10 @@
 import { Calendar, Sparkles } from "lucide-react";
 
 export function FinalCTASection() {
+  const handleTryBeta = () => {
+    window.open("https://app.dexterai.xyz/", "_blank");
+  };
+
   return (
     <section
       id="get-started"
@@ -36,12 +40,15 @@ export function FinalCTASection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble">
+            <button
+              onClick={handleTryBeta}
+              className="inline-flex items-center gap-3 px-6 py-3 bg-dexter-primary-soft border border-dexter-primary/20 rounded-full page-bubble hover:bg-dexter-primary/20 transition-colors cursor-pointer"
+            >
               <Calendar className="w-4 h-4 text-dexter-primary" />
               <span className="text-sm sm:text-lg text-dexter-primary font-mono font-medium uppercase tracking-wide">
-                Launching Soon
+                Try BETA
               </span>
-            </div>
+            </button>
           </div>
         </div>
       </div>

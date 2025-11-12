@@ -33,6 +33,10 @@ export function Header() {
     window.open("https://discord.gg/uKNSKVUaee", "_blank");
   };
 
+  const handleTryBeta = () => {
+    window.open("https://app.dexterai.xyz/", "_blank");
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -70,6 +74,13 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-2 ml-auto">
+            <Button
+              variant="default"
+              onClick={handleTryBeta}
+              className="bg-dexter-primary text-black hover:bg-dexter-primary/90 rounded-lg px-4 py-2 text-sm font-medium"
+            >
+              Try BETA
+            </Button>
             <Button
               variant="ghost"
               size="icon"

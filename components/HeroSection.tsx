@@ -4,8 +4,8 @@ import { useState } from "react";
 export function HeroSection() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleJoinDiscord = () => {
-    window.open("https://discord.gg/uKNSKVUaee", "_blank");
+  const handleTryBeta = () => {
+    window.open("https://app.dexterai.xyz/", "_blank");
   };
 
   // Image positioning and scaling configuration
@@ -114,15 +114,9 @@ export function HeroSection() {
               <Button
                 variant="default"
                 className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-dexter-primary text-black hover:bg-dexter-primary/90 hover-lift min-h-[52px] lg:min-h-[48px] rounded-lg text-button font-medium transition-all duration-200"
-                onClick={handleJoinDiscord}
+                onClick={handleTryBeta}
               >
-                <img
-                  src="/discord_icon_transparent.png"
-                  alt="Discord"
-                  className="w-5 h-5 filter-black"
-                  style={{ marginRight: "6px" }}
-                />
-                <span className="text-black">Join Discord</span>
+                <span className="text-black">Try BETA</span>
               </Button>
             </div>
 

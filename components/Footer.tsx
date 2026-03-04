@@ -69,7 +69,7 @@ export function Footer() {
             {/* Right: Copyright */}
             <div className="text-center lg:text-right">
               <p className="text-sm text-muted-foreground">
-                © 2025 Dexter. Built for autonomous yield optimization.
+                © 2026 Dexter. Your on-chain AI portfolio manager.
               </p>
             </div>
           </div>

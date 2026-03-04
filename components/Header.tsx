@@ -17,12 +17,7 @@ export function Header() {
     };
   }, []);
 
-  const navItems = [
-    { label: "How it Works", href: "#how-it-works" },
-    { label: "Docs", href: "https://docs.dexterai.xyz/" }
-  ];
-
-  const navLinkClass = "text-body text-muted-foreground hover:text-foreground smooth-transition relative group";
+  const navItems: { label: string; href: string }[] = [];
   const logoTextColorClass = "text-foreground";
 
   const handleJoinX = () => {

@@ -12,28 +12,11 @@ export function HeroSection() {
     window.open("https://app.dexterai.xyz/", "_blank");
   };
 
-  const imageConfig = {
-    desktop: {
-      translateX: 12,
-      translateY: 15,
-      scale: 1.12,
-      opacity: 0.9,
-    },
-    mobile: {
-      translateX: 0,
-      translateY: 18,
-      scale: 1.0,
-      opacity: 0.3,
-    },
-  };
-
-  const desktopScale = isHovered
-    ? imageConfig.desktop.scale * 1.03
-    : imageConfig.desktop.scale;
+  const desktopScale = isHovered ? 1.12 * 1.03 : 1.12;
 
   const featurePills = [
     {
-      label: "AI-NATIVE INTELLIGENCE",
+      label: "AI-NATIVE",
       description: "Ingests full Sui DeFi state. Reasons like a trading desk.",
     },
     {
@@ -41,7 +24,7 @@ export function HeroSection() {
       description: "Describe it in plain English. Dexter builds & simulates it.",
     },
     {
-      label: "NON-CUSTODIAL AUTONOMY",
+      label: "NON-CUSTODIAL",
       description: "No vaults. No custody. Type-safe guardrails you control.",
     },
   ];
@@ -51,7 +34,7 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-midnight-carbon" />
 
-      {/* Floating gradient orbs behind mascot */}
+      {/* Floating gradient orbs behind mascot — desktop only */}
       <FloatingElement
         className="gradient-orb absolute top-1/4 right-[15%] w-[300px] h-[300px] opacity-30 hidden lg:block"
         amplitude={20}
@@ -68,35 +51,54 @@ export function HeroSection() {
         <div className="w-full h-full" />
       </FloatingElement>
 
-      {/* Dexter Pixel Background */}
-      <div className="absolute inset-0 flex items-center justify-center lg:justify-end">
-        {/* Mobile Image */}
+      {/* ====== MOBILE: Mascot positioned at bottom, subtle ====== */}
+      <div className="absolute inset-0 lg:hidden pointer-events-none">
+        {/* Subtle ambient glow instead of busy mascot */}
         <div
-          className="block lg:hidden w-full h-full bg-center bg-no-repeat pointer-events-none"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-[55%]"
           style={{
             backgroundImage: `url(/Dexter_pixel.png)`,
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
+            backgroundPosition: "center bottom",
+            backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            opacity: imageConfig.mobile.opacity,
-            transform: `translateX(${imageConfig.mobile.translateX}%) translateY(${imageConfig.mobile.translateY}%) scale(${imageConfig.mobile.scale})`,
+            opacity: 0.12,
             maskImage:
-              "radial-gradient(circle at center, white 20%, transparent 70%)",
+              "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)",
             WebkitMaskImage:
-              "radial-gradient(circle at center, white 20%, transparent 70%)",
+              "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, transparent 75%)",
           }}
         />
-        {/* Desktop Image with parallax */}
+        {/* Ambient lime glow at bottom */}
         <motion.div
-          className="hidden lg:block w-full h-full max-w-5xl bg-center bg-cover bg-no-repeat pointer-events-auto"
+          className="absolute bottom-[5%] left-1/2 -translate-x-1/2 rounded-full"
+          style={{
+            width: "80vw",
+            height: "40vw",
+            background:
+              "radial-gradient(ellipse, rgba(189, 237, 99, 0.08) 0%, transparent 70%)",
+            filter: "blur(50px)",
+          }}
+          animate={{ scale: [1, 1.08, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      {/* ====== DESKTOP: Mascot right side with parallax ====== */}
+      <div className="absolute inset-0 hidden lg:flex items-center justify-end">
+        <motion.div
+          className="w-full h-full max-w-5xl bg-center bg-cover bg-no-repeat pointer-events-auto"
           style={{
             backgroundImage: `url(/Dexter_pixel.png)`,
             backgroundPosition: "center right",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            opacity: imageConfig.desktop.opacity,
+            opacity: 0.9,
             y: mascotY,
-            transform: `translateX(${imageConfig.desktop.translateX}%) translateY(${imageConfig.desktop.translateY}%) scale(${desktopScale})`,
+            transform: `translateX(12%) translateY(15%) scale(${desktopScale})`,
             maskImage:
               "radial-gradient(ellipse at center, white 20%, transparent 70%)",
             WebkitMaskImage:
@@ -109,26 +111,27 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight-carbon/70 via-transparent to-midnight-carbon/70 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent pointer-events-none" />
+      {/* Gradient overlay — stronger on mobile for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0C0C0D] via-[#0C0C0D]/80 to-[#0C0C0D]/90 lg:bg-gradient-to-r lg:from-midnight-carbon/90 lg:via-midnight-carbon/40 lg:to-transparent pointer-events-none" />
 
+      {/* ====== Content ====== */}
       <div
         className="container-dexter relative z-10 flex items-center"
         style={{ minHeight: "calc(100vh - 25px)" }}
       >
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
           {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8">
-            <div className="space-y-6 lg:space-y-6">
-              {/* Headline with staggered word animation */}
+          <div className="space-y-5 lg:space-y-8">
+            {/* Headline */}
+            <div className="space-y-4 lg:space-y-6">
               <h1
-                className="text-[2.75rem] leading-[1.1] lg:text-display font-display text-foreground text-center lg:text-left px-4 lg:px-0"
+                className="text-[2.5rem] sm:text-[2.75rem] leading-[1.1] lg:text-display font-display text-foreground text-center lg:text-left px-2 lg:px-0"
                 style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
               >
                 {["Your", "on-chain", "AI"].map((word, i) => (
                   <motion.span
                     key={word}
-                    className="inline-block mr-3"
+                    className="inline-block mr-2 sm:mr-3"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -160,23 +163,21 @@ export function HeroSection() {
               </h1>
 
               {/* Subhead */}
-              <motion.div
-                className="text-lg lg:text-xl text-white lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-4 lg:px-0"
+              <motion.p
+                className="text-[15px] sm:text-base lg:text-xl text-white/80 lg:text-dexter-grey max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0 px-2 lg:px-0"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.8)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                <p>
-                  AI that watches every protocol, builds strategies you can't,
-                  and moves your capital before you'd even notice.
-                </p>
-              </motion.div>
+                AI that watches every protocol, builds strategies you can't,
+                and moves your capital before you'd even notice.
+              </motion.p>
             </div>
 
             {/* CTA */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 px-4 lg:px-0"
+              className="flex flex-col sm:flex-row gap-4 px-2 lg:px-0"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -188,20 +189,56 @@ export function HeroSection() {
             >
               <Button
                 variant="default"
-                className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-dexter-primary text-black hover:bg-dexter-primary/90 hover-lift min-h-[52px] lg:min-h-[48px] rounded-full text-button font-medium transition-all duration-200 px-8"
+                className="w-full sm:flex-1 lg:flex-none lg:w-auto bg-dexter-primary text-black hover:bg-dexter-primary/90 hover-lift min-h-[48px] lg:min-h-[48px] rounded-full text-button font-medium transition-all duration-200 px-8"
                 onClick={handleTryBeta}
               >
-                <span className="text-black font-semibold tracking-wide">LIVE BETA</span>
+                <span className="text-black font-semibold tracking-wide">
+                  LIVE BETA
+                </span>
               </Button>
             </motion.div>
 
-            {/* Feature Pills */}
-            <div className="pt-4 lg:pt-6 border-t border-border mx-4 lg:mx-0">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
+            {/* Feature Pills — compact horizontal on mobile */}
+            <motion.div
+              className="pt-4 lg:pt-6 border-t border-white/10 lg:border-border mx-2 lg:mx-0"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+            >
+              {/* Mobile: compact 3-column grid */}
+              <div className="grid grid-cols-3 gap-3 lg:hidden">
                 {featurePills.map((pill, i) => (
                   <motion.div
                     key={pill.label}
-                    className="space-y-2 flex flex-col text-center lg:text-left"
+                    className="text-center"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20,
+                      delay: 1.0 + i * 0.1,
+                    }}
+                  >
+                    <div
+                      className="text-[10px] font-bold tracking-wider font-mono mb-1.5"
+                      style={{ color: "#BDED63" }}
+                    >
+                      {pill.label}
+                    </div>
+                    <p className="text-[11px] text-white/50 leading-snug">
+                      {pill.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Desktop: full 3-column grid */}
+              <div className="hidden lg:grid grid-cols-3 gap-6">
+                {featurePills.map((pill, i) => (
+                  <motion.div
+                    key={pill.label}
+                    className="space-y-2 text-left"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -214,18 +251,18 @@ export function HeroSection() {
                     <div className="text-sm font-bold tracking-wide">
                       <span style={{ color: "#BDED63" }}>{pill.label}</span>
                     </div>
-                    <p className="text-base lg:text-sm text-white lg:text-dexter-grey leading-relaxed">
+                    <p className="text-sm text-dexter-grey leading-relaxed">
                       {pill.description}
                     </p>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Side - Empty for background visual */}
-          <div className="relative flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-lg h-0 sm:h-[400px] lg:h-[600px] relative"></div>
+          {/* Right Side — spacer for desktop layout */}
+          <div className="relative hidden lg:flex items-center justify-end">
+            <div className="w-full max-w-lg h-[600px] relative" />
           </div>
         </div>
       </div>

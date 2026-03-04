@@ -82,28 +82,23 @@ export function DifferentiatorsSection() {
             <motion.div
               key={card.title}
               variants={cardVariant(card.direction)}
-              whileHover={{
-                y: -4,
-                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.12)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-              className="rounded-lg p-6 lg:p-8 border transition-colors"
+              className="rounded-lg p-5 sm:p-6 lg:p-8 border transition-colors"
               style={{
                 backgroundColor: "rgba(0, 0, 0, 0.08)",
                 borderColor: "rgba(0, 0, 0, 0.12)",
               }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <card.icon className="w-6 h-6" style={{ color: "#000000" }} />
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <card.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: "#000000" }} />
                 <h3
-                  className="text-xl font-bold font-display"
+                  className="text-lg sm:text-xl font-bold font-display"
                   style={{ color: "#000000" }}
                 >
                   {card.title}
                 </h3>
               </div>
               <p
-                className="text-body mb-6 leading-relaxed"
+                className="text-sm sm:text-body mb-4 sm:mb-6 leading-relaxed"
                 style={{ color: "#2D2D2D" }}
               >
                 {card.description}

@@ -26,17 +26,17 @@ export function MetricsSection() {
               <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
                 <div className="space-y-1 sm:space-y-2">
                   <h2 className="leading-none flex flex-col">
-                    <span className="text-[26px] sm:text-[72px] lg:text-[80px] font-medium text-dexter-primary font-display">
+                    <span className="text-[26px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-medium text-dexter-primary font-display">
                       Highest
                     </span>
-                    <span className="text-[26px] sm:text-[72px] lg:text-[80px] font-medium text-white font-display">
+                    <span className="text-[26px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-medium text-white font-display">
                       guaranteed APRs
                     </span>
                   </h2>
                 </div>
 
                 <div className="space-y-2 max-w-[90%] sm:max-w-lg mx-auto lg:mx-0 px-4 sm:px-0">
-                  <p className="text-xl text-dexter-grey leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-xl text-dexter-grey leading-relaxed">
                     Yield strategy performance on $1K, benchmarked with
                     historical WAL yield data.
                   </p>
@@ -154,7 +154,7 @@ function ProtocolTable() {
                       style={{ backgroundColor: protocol.logoColor }}
                     />
                     <span
-                      className="text-[11px] sm:text-label text-foreground font-normal leading-tight"
+                      className="text-[11px] sm:text-label text-foreground font-normal leading-tight truncate"
                       style={{ textTransform: "none" }}
                     >
                       {protocol.name}

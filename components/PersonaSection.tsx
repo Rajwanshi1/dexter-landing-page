@@ -48,7 +48,7 @@ export function PersonaSection() {
           {personas.map((persona, i) => (
             <motion.div
               key={persona.title}
-              className="rounded-lg p-6 lg:p-8 border"
+              className="rounded-lg p-5 sm:p-6 lg:p-8 border"
               style={{
                 backgroundColor: "rgba(0, 0, 0, 0.07)",
                 borderColor: "rgba(0, 0, 0, 0.1)",
@@ -64,9 +64,9 @@ export function PersonaSection() {
               }}
             >
               <div className="flex items-center gap-3 mb-2">
-                <persona.icon className="w-6 h-6" style={{ color: "#000000" }} />
+                <persona.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: "#000000" }} />
                 <h3
-                  className="text-xl font-bold font-display"
+                  className="text-lg sm:text-xl font-bold font-display"
                   style={{ color: "#000000" }}
                 >
                   {persona.title}

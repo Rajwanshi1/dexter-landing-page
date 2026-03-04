@@ -158,7 +158,7 @@ export function HowItWorksSection() {
                       <h3
                         className="font-semibold"
                         style={{
-                          fontSize: "22px",
+                          fontSize: "20px",
                           lineHeight: "1.3",
                           color: "#000000",
                           fontWeight: "600",
@@ -207,7 +207,7 @@ export function HowItWorksSection() {
                   <div className="text-center max-w-sm mx-auto">
                     <p
                       style={{
-                        fontSize: "17px",
+                        fontSize: "15px",
                         lineHeight: "1.5",
                         color: "#2D2D2D",
                         fontWeight: "400",

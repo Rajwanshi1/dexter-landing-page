@@ -10,7 +10,7 @@ export function StatsStrip() {
   return (
     <div className="relative overflow-hidden" style={{ backgroundColor: "#0C0C0D" }}>
       <div className="container-dexter py-5">
-        <div className="flex items-center justify-center gap-8 sm:gap-16 lg:gap-24">
+        <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-3 sm:gap-x-16 lg:gap-x-24">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

@@ -22,8 +22,8 @@ export function FinalCTASection() {
       id="get-started"
       className="relative overflow-hidden"
       style={{
-        paddingTop: "7rem",
-        paddingBottom: "7rem",
+        paddingTop: "clamp(4rem, 8vw, 7rem)",
+        paddingBottom: "clamp(4rem, 8vw, 7rem)",
         background:
           "linear-gradient(160deg, #c8f05e 0%, #bded63 30%, #a8d94a 70%, #9cce3e 100%)",
       }}

@@ -17,8 +17,17 @@ export function Header() {
     };
   }, []);
 
-  const navItems: { label: string; href: string }[] = [];
-  const logoTextColorClass = "text-foreground";
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   const handleJoinX = () => {
     window.open("https://x.com/DexterAgents", "_blank");
@@ -41,34 +50,19 @@ export function Header() {
       }`}
     >
       <div className="container-dexter">
-        <div className="flex items-center h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-[26px] h-[26px] lg:w-[30px] lg:h-[30px] flex-shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] lg:w-[30px] lg:h-[30px] flex-shrink-0">
               <Vector />
             </div>
-            <div className="text-[19px] font-semibold tracking-wide font-display relative top-[2px]">
-              <span className={logoTextColorClass}>DEXTER</span>
+            <div className="text-[17px] sm:text-[19px] font-semibold tracking-wide font-display relative top-[2px]">
+              <span className="text-foreground">DEXTER</span>
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                {...(item.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
-                className={navLinkClass}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-dexter-primary group-hover:w-full transition-all duration-300 ease-out" />
-              </a>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-2 ml-auto">
+          {/* CTA Button — Desktop */}
+          <div className="hidden lg:flex items-center gap-2">
             <Button
               variant="default"
               onClick={handleTryBeta}
@@ -94,50 +88,48 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-muted-foreground hover:text-foreground smooth-transition ml-auto"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: CTA + Menu */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <Button
+              variant="default"
+              onClick={handleTryBeta}
+              className="bg-dexter-primary text-black hover:bg-dexter-primary/90 rounded-lg px-3 py-1.5 text-xs font-medium"
+            >
+              Try BETA
+            </Button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-muted-foreground hover:text-foreground smooth-transition min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-dexter">
-            <nav className="py-4 space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  {...(item.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="block text-body text-muted-foreground hover:text-foreground smooth-transition px-4 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="flex items-center justify-center gap-4 px-4 pt-4 border-t border-border">
+            <div className="py-5 px-2">
+              <div className="flex items-center justify-center gap-3">
                 <Button
                   variant="ghost"
-                  size="icon"
                   onClick={handleJoinX}
-                  className="bg-dexter-graphite/50 hover:bg-dexter-graphite text-muted-foreground hover:text-foreground rounded-full"
+                  className="bg-dexter-graphite/50 hover:bg-dexter-graphite text-muted-foreground hover:text-foreground rounded-full flex items-center gap-2 px-4 min-h-[44px]"
                 >
-                  <img src="/x.png" alt="X" className="h-[29px] w-[29px]" />
+                  <img src="/x.png" alt="X" className="h-5 w-5" />
+                  <span className="text-sm">X</span>
                 </Button>
                 <Button
                   variant="ghost"
-                  size="icon"
                   onClick={handleJoinDiscord}
-                  className="bg-dexter-graphite/50 hover:bg-dexter-graphite text-muted-foreground hover:text-foreground rounded-full"
+                  className="bg-dexter-graphite/50 hover:bg-dexter-graphite text-muted-foreground hover:text-foreground rounded-full flex items-center gap-2 px-4 min-h-[44px]"
                 >
-                  <img src="/discord_icon_transparent.png" alt="Discord" className="h-[29px] w-[29px]" />
+                  <img src="/discord_icon_transparent.png" alt="Discord" className="h-5 w-5" />
+                  <span className="text-sm">Discord</span>
                 </Button>
               </div>
-            </nav>
+            </div>
           </div>
         )}
       </div>

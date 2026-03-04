@@ -363,7 +363,7 @@ export function ProblemSection() {
         </motion.div>
 
         {/* Visual panels */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-2 sm:px-0">
           {panels.map((panel, i) => (
             <motion.div
               key={panel.title}

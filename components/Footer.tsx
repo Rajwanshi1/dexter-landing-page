@@ -36,10 +36,10 @@ export function Footer() {
                     <TooltipTrigger asChild>
                       <button
                         onClick={handleJoinX}
-                        className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition"
+                        className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition min-h-[44px] px-2"
                       >
-                        <img src="/x.png" alt="X" className="w-[14px] h-[14px]" />
-                        <span className="text-sm">Follow us on X</span>
+                        <img src="/x.png" alt="X" className="w-4 h-4 sm:w-[14px] sm:h-[14px]" />
+                        <span className="text-xs sm:text-sm">Follow us on X</span>
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -52,10 +52,10 @@ export function Footer() {
                     <TooltipTrigger asChild>
                       <button
                         onClick={handleJoinDiscord}
-                        className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition"
+                        className="group flex items-center gap-2 text-muted-foreground hover:text-dexter-primary smooth-transition min-h-[44px] px-2"
                       >
                         <img src="/discord_icon_transparent.png" alt="Discord" className="w-4 h-4" />
-                        <span className="text-sm">Join Discord</span>
+                        <span className="text-xs sm:text-sm">Join Discord</span>
                       </button>
                     </TooltipTrigger>
                     <TooltipContent>

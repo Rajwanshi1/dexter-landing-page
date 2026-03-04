@@ -250,7 +250,7 @@ export function SolutionSection() {
             Meet Dexter
           </h2>
           <p
-            className="text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed"
             style={{ color: "#bded63" }}
           >
             Your AI-powered portfolio manager on Sui. It watches what you
@@ -263,7 +263,7 @@ export function SolutionSection() {
           className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-6 items-center max-w-6xl mx-auto"
         >
           {/* ── Left: Capability cards ── */}
-          <div className="space-y-8 order-2 lg:order-1 lg:pr-4">
+          <div className="space-y-6 sm:space-y-8 order-2 lg:order-1 lg:pr-4">
             {capabilities.map((cap, i) => (
               <motion.div
                 key={cap.title}
@@ -300,7 +300,7 @@ export function SolutionSection() {
                   >
                     {cap.title}
                   </h3>
-                  <p className="text-body text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-body text-muted-foreground leading-relaxed">
                     {cap.description}
                   </p>
                 </div>

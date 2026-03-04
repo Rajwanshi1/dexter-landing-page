@@ -69,15 +69,10 @@ export function SafetySection() {
             <motion.div
               key={pillar.title}
               variants={cardVariant}
-              whileHover={{
-                y: -4,
-                boxShadow: "0 8px 30px rgba(189, 237, 99, 0.1)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-              className="bg-dexter-carbon rounded-lg p-6 lg:p-8 border border-border"
+              className="bg-dexter-carbon rounded-lg p-5 sm:p-6 lg:p-8 border border-border hover-lift"
             >
               <motion.div
-                className="mb-4"
+                className="mb-3 sm:mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
@@ -88,12 +83,12 @@ export function SafetySection() {
                   delay: 0.1,
                 }}
               >
-                <pillar.icon className="w-8 h-8" style={{ color: "#bded63" }} />
+                <pillar.icon className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: "#bded63" }} />
               </motion.div>
-              <h3 className="text-lg font-semibold text-foreground mb-3 font-display">
+              <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 font-display">
                 {pillar.title}
               </h3>
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-body text-muted-foreground leading-relaxed">
                 {pillar.description}
               </p>
             </motion.div>
